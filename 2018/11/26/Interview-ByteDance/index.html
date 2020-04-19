@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN / en-US">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="昨天下午尝试了第一次视频面试，面试的岗位是字节跳动的[后台开发-基础架构]实习岗，由于我本身的技术的确是远远没有达到岗位的要求，所以这一次的面试也只是抱着试一试的态度，了解一下面试的流程，积累一些经验，同时通过面试进一步了解自己应该努力的方向。">
+<meta name="keywords" content="面试,Go">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试经历-字节跳动后台开发(基础架构)实习岗">
+<meta property="og:url" content="http://zys980808.github.io/2018/11/26/Interview-ByteDance/index.html">
+<meta property="og:site_name" content="Jeff的博客">
+<meta property="og:description" content="昨天下午尝试了第一次视频面试，面试的岗位是字节跳动的[后台开发-基础架构]实习岗，由于我本身的技术的确是远远没有达到岗位的要求，所以这一次的面试也只是抱着试一试的态度，了解一下面试的流程，积累一些经验，同时通过面试进一步了解自己应该努力的方向。">
+<meta property="og:locale" content="zh-CN / en-US">
+<meta property="og:image" content="http://zys980808.github.io/2018/11/26/Interview-ByteDance/interface.png">
+<meta property="og:updated_time" content="2020-04-19T06:50:28.336Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试经历-字节跳动后台开发(基础架构)实习岗">
+<meta name="twitter:description" content="昨天下午尝试了第一次视频面试，面试的岗位是字节跳动的[后台开发-基础架构]实习岗，由于我本身的技术的确是远远没有达到岗位的要求，所以这一次的面试也只是抱着试一试的态度，了解一下面试的流程，积累一些经验，同时通过面试进一步了解自己应该努力的方向。">
+<meta name="twitter:image" content="http://zys980808.github.io/2018/11/26/Interview-ByteDance/interface.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jeff的博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://zys980808.github.io/2018/11/26/Interview-ByteDance/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>面试经历-字节跳动后台开发(基础架构)实习岗 | Jeff的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN / en-US">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jeff的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zys980808.github.io/2018/11/26/Interview-ByteDance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeff">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jeff的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">面试经历-字节跳动后台开发(基础架构)实习岗
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-11-26 13:47:10" itemprop="dateCreated datePublished" datetime="2018-11-26T13:47:10+08:00">2018-11-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2020-04-19 14:50:28" itemprop="dateModified" datetime="2020-04-19T14:50:28+08:00">2020-04-19</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/其他/" itemprop="url" rel="index"><span itemprop="name">其他</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>昨天下午尝试了第一次视频面试，面试的岗位是字节跳动的[后台开发-基础架构]实习岗，由于我本身的技术的确是远远没有达到岗位的要求，所以这一次的面试也只是抱着试一试的态度，了解一下面试的流程，积累一些经验，同时通过面试进一步了解自己应该努力的方向。</p>
+<a id="more"></a>
+<p>时间定在了周日下午的四点，直到面试前都没有加上HR的微信，所以在面试前心中还是有种“我要被鸽了”的感觉。点开通知邮件发给我的面试链接以后，点开展示的就是牛客网的面试系统界面:</p>
+<p><img src="interface.png" alt></p>
+<p>四点过了两分钟，面试官就上线了，是个很有亲和力的中年男子。此时我还是很紧张的，毕竟是第一次参加正经的面试，所以谈吐都有些不自然了。调整视频连接耽误了一小段时间。</p>
+<h2 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h2><p>面试官看了看我的简历，上面有一项是“熟悉Go语言编程”；我听到他提起这个心里就凉了一半：其实自己对于Go语言也借由本学期的服务计算课进行了个入门而已，远算不上熟悉。然后他说有一道题特别适合用Go来编程，就出给我做了:</p>
+<hr>
+
+<p>先定义了一个<code>read</code>函数，这个函数就是一个Socket接口，每次会读数据入缓冲区；然后要我写一个<code>readLine</code>函数，按行输出Socket读的数据，他一开始先给了我两个提示：</p>
+<ul>
+<li><code>read</code>是会阻塞的</li>
+<li>每次<code>read</code>得到的数据有可能有换行符<code>\n</code>，有可能没有，也有可能会有多个</li>
+</ul>
+<p>这是面试官给出的函数定义:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// read: socket api </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// - fd: socket 的文件fd</span></span><br><span class="line"><span class="comment">// - buf: 读入缓冲区</span></span><br><span class="line"><span class="comment">// - N: 最大数据大小</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">read</span><span class="params">(fd <span class="keyword">int</span>,  buf []<span class="keyword">byte</span>, N <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+
+<p>听完题后我整个人就很慌了，因为心里总有股声音觉得自己不会。而实际上我也的确对Go不熟悉，很多类似<code>append</code>, <code>channel</code> 这样的操作还需要查自己或别人的博客去写。</p>
+<p>虽然慌的一匹，但总归还是有一点思路（现在想来这也不过就是一道生产者、消费者的问题），中间面试官提示我用<code>channel</code>去做这一道题，但我并没有用过所以短暂思考后也放弃了这个思路。</p>
+<p>最后用一个循环调用<code>read</code>的方法完成了这道题，用<code>last</code>变量来存储上一次调用<code>read</code>所剩下的内容：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Read <span class="keyword">struct</span> &#123;</span><br><span class="line">	fd <span class="keyword">int</span>          <span class="comment">// socket fd</span></span><br><span class="line">	N  <span class="keyword">int</span>          <span class="comment">// max size per line</span></span><br><span class="line">	last []<span class="keyword">byte</span>     <span class="comment">// last read remained</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(r Read)</span> <span class="title">readLine</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> buf []<span class="keyword">byte</span></span><br><span class="line">	<span class="keyword">for</span> read(r.fd, buf, r.N) != <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; buf.size(); i++ &#123;</span><br><span class="line">			<span class="keyword">if</span> buf[i] == <span class="string">'\n'</span> &#123;</span><br><span class="line">				temp := <span class="built_in">append</span>(last, buf[:i]...)</span><br><span class="line">				r.last = buf[i+<span class="number">1</span>:]</span><br><span class="line">				<span class="keyword">return</span> temp</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这中间有几个严重的逻辑错误，都是面试官提出来然后我才能反应过来并迅速修正：</p>
+<ul>
+<li><p>如果某次<code>read</code>得到了多行，那么<code>last</code>存储的数据就会是多行的，代码没有考虑这个问题。解决方案我也立马能想出来：在执行循环调用<code>read</code>之前先检查<code>last</code>是否为空，不为空就遍历一遍看看是否有一行存在，有则返回第一行并对<code>last</code>进行切割</p>
+</li>
+<li><p>如果某次<code>read</code>没有换行，这份代码并没有将这次读取的数据保存。显然解决方案就是在每次循环的末尾增加一个<code>append(last, buf...)</code></p>
+</li>
+</ul>
+<p>这也体现出我的思维是很不严谨的，然后代码能力也偏弱。我在以往做算法题的时候就很依赖提交，通过提交去检查自己的代码有没有问题，这样在考试的时候就会体现出我这样效率其实很低，而且长期的依赖也导致了自己基本的Debug能力有所降低。</p>
+<p>在编程测试结束的时候，面试官告诉我简历不能给面试带来信息不对称，比如刚入门Go语言就不应该写成熟悉；也真是令人汗颜。自己的简历的确有着不少的水分，需要重新修改一番。</p>
+<h2 id="后阶段面试"><a href="#后阶段面试" class="headerlink" title="后阶段面试"></a>后阶段面试</h2><p>后阶段面试就更加能显现我简历的水分了，面试官看到我在简历里写了我在做MIT的6.828的实验，他想要从这里展开。到这里我就不得不和盘托出其实我只做了这个系列实验的Lab1，然后考虑到学这个又要去学x86编程，耗费时间有点多然后就搁置了。听到这里其实面试官已经基本宣告面试fail了。他告诉我这个部门是负责存储的，所以对算法或者某一后台领域的知识会要求很高，所以希望我可以明确一个方向，回去好好修炼再去考虑面试的事情。他还推荐我可以去看CMU的存储课程。另外，他还说我可以考虑面试一下后台业务开发的岗位，链接在面试通知邮件里也可以找到。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这次面试也就这样在不安中结束了。的确这次就是抱着来试试的态度进行面试，所以结果不如意倒也正常。面试时间虽然只有短短的一个多小时，但也还是了解到了自己很多的缺陷：代码能力亟待提高，需要专精一个后台的方向（目前我想做的是网络编程），另外基础课程的知识也非常重要，如果有时间得捡回6.828，再加一些存储的课程。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+            <a href="/tags/Go/" rel="tag"># Go</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/24/Linux/VitualBox-Double-System/" rel="next" title="VirtualBox安装 WinXP+CentOS双系统">
+                <i class="fa fa-chevron-left"></i> VirtualBox安装 WinXP+CentOS双系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/26/Algorithm/graph-scc/" rel="prev" title="强连通分量">
+                强连通分量 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Jeff</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">Kategorien</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">Tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编程"><span class="nav-number">1.</span> <span class="nav-text">编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后阶段面试"><span class="nav-number">2.</span> <span class="nav-text">后阶段面试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jeff</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
