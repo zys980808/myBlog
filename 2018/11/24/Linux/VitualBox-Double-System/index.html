@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>edge type | Jeff的博客</title>
-  <meta name="keywords" content=" 算法 , 图论 ">
-  <meta name="description" content="edge type | Jeff的博客">
+  <title>VirtualBox安装 WinXP+CentOS双系统 | Jeff的博客</title>
+  <meta name="keywords" content=" Linux ">
+  <meta name="description" content="VirtualBox安装 WinXP+CentOS双系统 | Jeff的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Linux快速入门个人食用的Linux快速入门小手册。 资料 Linux命令大全(手册)">
 <meta name="keywords" content="Linux">
@@ -376,9 +376,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Algorithm/graph-edge-type" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Linux/VitualBox-Double-System" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">edge type</h1>
+        <h1 class="article-title">VirtualBox安装 WinXP+CentOS双系统</h1>
     
     <div class="article-meta">
         
@@ -386,28 +386,26 @@
         
         <span class="book">
             
-                <a  data-rel="算法">算法</a>
+                <a  data-rel="Linux">Linux</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color3">算法</a>
-            
-            <a class="color3">图论</a>
+            <a class="color1">Linux</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-04-19 14:50:28'>2018-11-26 15:02</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-21 09:27:28'>2018-11-24 14:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:402</span>
+        <span>字数:819</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -426,7 +424,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#有向图边的类型"><span class="toc-text">有向图边的类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#判断有向图边的类型"><span class="toc-text">判断有向图边的类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#应用"><span class="toc-text">应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#判断有向图是否有圈"><span class="toc-text">判断有向图是否有圈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进行拓扑排序"><span class="toc-text">进行拓扑排序</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Let’s-Go"><span class="toc-text">Let’s Go</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建虚拟硬盘"><span class="toc-text">新建虚拟硬盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用CentOS分区并安装CentOS"><span class="toc-text">使用CentOS分区并安装CentOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装WindowsXP"><span class="toc-text">安装WindowsXP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#救援MBR内的Boot-Loader"><span class="toc-text">救援MBR内的Boot Loader</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Grub2设置"><span class="toc-text">Grub2设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成功！"><span class="toc-text">成功！</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -442,37 +440,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="有向图边的类型"><a href="#有向图边的类型" class="headerlink" title="有向图边的类型"></a>有向图边的类型</h1><p>有向图边有如下几个类型：</p>
-<ul>
-<li>tree edge 树边</li>
-<li>foward edge 前向边</li>
-<li>back edge 回边</li>
-<li>cross edge 横跨边</li>
+        <p>建议在开始之前，先在<a href="http://linux.vbird.org/linux_basic/0130designlinux.php" target="_blank" rel="noopener">这里</a>学习分区和开机的知识，然后按照<a href="http://linux.vbird.org/linux_basic/0157installcentos7.php" target="_blank" rel="noopener">这个</a>步骤把CentOS单系统安装成功之后，再来看这里。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="http://linux.vbird.org/linux_basic/0157installcentos7.php#multiboot" target="_blank" rel="noopener">鸟哥Linux私房菜 - 多重开机安装流程与管理</a></li>
+<li><a href="http://www.jinbuguo.com/linux/grub.cfg.html" target="_blank" rel="noopener">Grub2配置文件详解</a></li>
 </ul>
-<p>一张图即可解释：</p>
-<p><img src="1.png" alt></p>
 <a id="more"></a>
-<h1 id="判断有向图边的类型"><a href="#判断有向图边的类型" class="headerlink" title="判断有向图边的类型"></a>判断有向图边的类型</h1><p>在DFS的过程中，可以直接用pre, post 值来判断；当然首先得知道如何计算 pre, post 值，这同样可以用一张图来解释（该图数对为 pre,post）：</p>
-<p><img src="2.png" alt></p>
+<h1 id="Let’s-Go"><a href="#Let’s-Go" class="headerlink" title="Let’s Go"></a>Let’s Go</h1><p>采用的是先装 CentOS, 再安装Windows的过程，体验一下 “救援” 被Windows覆盖的MBR的过程</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>XP ISO 安装版，有些版本是所谓 装机版 是不能在Virtual Box跑的，它需要在Windows下打开来运行；我们需要的是ISO映像 <a href="http://www.2013xp.com/xp/3057.html" target="_blank" rel="noopener">这个</a>就可以</p>
+<p>CentOS-7 minimal, 官网下载即可</p>
+<h2 id="新建虚拟硬盘"><a href="#新建虚拟硬盘" class="headerlink" title="新建虚拟硬盘"></a>新建虚拟硬盘</h2><blockquote>
+<p>这一步很关键</p>
+</blockquote>
+<p>由于XP系统只能识别IDE硬盘，因此在新建系统时如果选择Ubuntu，Win10之类的都会自动分配一个SATA硬盘，这会导致WindowsXP无法识别，从而安装失败。</p>
+<p>选择Linux-&gt;其他Linux系统则会分配IDE接口的硬盘。另外，直接选择XP系统会导致CentOS中途无法安装，原因暂时不明</p>
+<blockquote>
+<p>还需继续研究</p>
+</blockquote>
+<h2 id="使用CentOS分区并安装CentOS"><a href="#使用CentOS分区并安装CentOS" class="headerlink" title="使用CentOS分区并安装CentOS"></a>使用CentOS分区并安装CentOS</h2><p>当然WindowsXP也能进行分区，只不过界面和功能来说还是CentOS更胜一筹；详细的步骤跟着 <a href="http://linux.vbird.org/linux_basic/0157installcentos7.php#multiboot_design" target="_blank" rel="noopener">鸟哥的教程</a>就行了。当然博主的分区规划和鸟哥的略有不同，如下所示：</p>
 <ul>
-<li>如果一个点pre和post值不存在，说明该点未被访问过，是一个 <strong>树边</strong> （例如图中<code>F-&gt;G</code>)</li>
-<li>如果 <code>pre(u) &lt; pre(v) &lt; post(v) &lt; post(u)</code>，说明 u 肯定 v 的祖先<ul>
-<li>若有 v-&gt;u， 则该边是一个 <strong>回边</strong>；（例如图中<code>F-&gt;B</code>)</li>
-<li>若有 u-&gt;v, 且显然此时pre(v)和post(v)都存在，不可能是树边，则该边是 <strong>前向边</strong> （例如图中<code>E-&gt;G</code>)</li>
+<li>1M ~ 15G : 主要分区1，用于安装CentOS (<code>sda1</code>)</li>
+<li>15G ~ 30G : 主要分区2，用于安装WindowsXP (<code>sda2</code>)</li>
+<li>30G ~ 40G : 扩展分区 (<code>sda3</code>)<ul>
+<li>30G ~ 38G ：逻辑分区1，用于windows和cent共享数据 (<code>sda5</code>) <blockquote>
+<p>注意到这里从5开始，因为如前所述1~4分给了primary和extended</p>
+</blockquote>
+</li>
+<li>38G ~ 40G : 逻辑分区2，用于换页，增强内存功能 (<code>sda6</code>)</li>
 </ul>
 </li>
-<li>对于 <strong>横跨边</strong>，已经是分属两条不同的深搜路径，所以必然的，两个点的(pre,post)区间没有重叠（例如图中 <code>D-&gt;H</code></li>
 </ul>
-<p>可以总结为下图：</p>
-<p><img src="3.png" alt></p>
-<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="判断有向图是否有圈"><a href="#判断有向图是否有圈" class="headerlink" title="判断有向图是否有圈"></a>判断有向图是否有圈</h2><p>等价于判断图中是否有 <strong>回边</strong></p>
-<h2 id="进行拓扑排序"><a href="#进行拓扑排序" class="headerlink" title="进行拓扑排序"></a>进行拓扑排序</h2><p>首先要知道什么是拓扑排序：拓扑排序就是将结点依次排序，使得图内的边都是从该序列前面的点流向后面的点（显然前提是这个图不能有环）</p>
-<p>例：穿衣服问题，见下图。</p>
-<p><img src="4.png" alt></p>
-<p><strong>正如图中所示，只要按Post值倒序就可以了</strong></p>
-<blockquote>
-<p>当然这题还有另外的解法：不断从图中删去in-degree为0的点（source）</p>
-</blockquote>
+<h2 id="安装WindowsXP"><a href="#安装WindowsXP" class="headerlink" title="安装WindowsXP"></a>安装WindowsXP</h2><p>重新设置一下启动的ISO镜像，选择WindowsXP镜像启动，然后安装，注意别安装错了（当然如果不小心点了CentOS的系统盘会有提示上面装了系统）</p>
+<p>安装完以后，虚拟硬盘的MBR就被WindowsXP的boot loader “霸道”地覆盖了，重启就只能进入WindowsXP系统</p>
+<h2 id="救援MBR内的Boot-Loader"><a href="#救援MBR内的Boot-Loader" class="headerlink" title="救援MBR内的Boot Loader"></a>救援MBR内的Boot Loader</h2><p>此时我们需要替换MBR的boot loader，不能再让XP占用下去了！网上很多建议装双系统是先装Windows再装Linux，是因为很多Linux版本自带了一个强大的 boot loader - grub2, 它可以实现多重引导（其实本质上就是引导到某个分区的booting section上而已）</p>
+<p>现在在MBR被覆盖的情况下，我们仍然能通过CentOS的安装程序进行“救援”：关机，切换CentOS的ISO镜像，然后按照<a href="http://linux.vbird.org/linux_basic/0157installcentos7.php#multiboot_rescue" target="_blank" rel="noopener">鸟哥的教程</a>进行救援</p>
+<h2 id="Grub2设置"><a href="#Grub2设置" class="headerlink" title="Grub2设置"></a>Grub2设置</h2><p>鸟哥的教程里有一部分对Grub2的设置，乍一看还是蛮困扰的，幸亏看了这一片<a href="http://www.jinbuguo.com/linux/grub.cfg.html" target="_blank" rel="noopener">教程</a>，我知道了<code>set root=&#39;(hd0,3)&#39;</code>指的是第一块硬盘内的第三个主要分区；而博主的分区规划是把Windows安装在第二个主要分区，因此改成<code>set root=&#39;(hd0,2)</code>即可，<strong>注意这里格式严格不能有多余空格哦！</strong></p>
+<h2 id="成功！"><a href="#成功！" class="headerlink" title="成功！"></a>成功！</h2><p>然后重启，就会发现 Grub2 多了一个WindowsXP，截图留念：</p>
+<p><img src="dsys_grub2.jpg" alt></p>
+<p>当然Windows也启动成功了：</p>
+<p><img src="dsys_xp.jpg" alt></p>
+<hr>
+
+<p>如有任何问题，可发邮件至 <a href="mailto:``zys980808@126.com" target="_blank" rel="noopener">``zys980808@126.com</a><code></code> 告知我，感激不尽！</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -486,12 +495,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>edge type</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">402</span></p>
+    <p><span class="copy-title">文章标题:</span>VirtualBox安装 WinXP+CentOS双系统</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">819</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="Jeff">Jeff</a></p>
-    <p><span class="copy-title">发布时间:</span>2018-11-26, 15:02:26</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-19, 14:50:28</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/11/26/Algorithm/graph-edge-type/" title="edge type">http://zys980808.github.io/2018/11/26/Algorithm/graph-edge-type/</a>
+    <p><span class="copy-title">发布时间:</span>2018-11-24, 14:11:22</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-21, 09:27:28</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/11/24/Linux/VitualBox-Double-System/" title="VirtualBox安装 WinXP+CentOS双系统">http://zys980808.github.io/2018/11/24/Linux/VitualBox-Double-System/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
